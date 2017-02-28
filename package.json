@@ -8,9 +8,7 @@
     "vscode": "^1.5.0"
   },
   "categories": [
-    "Other",
-    "Formatters",
-    "Linters"
+    "Formatters"
   ],
   "activationEvents": [
     "onCommand:prettier-eslint.format",
@@ -18,7 +16,9 @@
     "workspaceContains:.eslintrc.js",
     "workspaceContains:.eslintrc.json",
     "workspaceContains:.eslintrc.yaml",
-    "workspaceContains:.eslintrc.yml"
+    "workspaceContains:.eslintrc.yml",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact"
   ],
   "main": "./out/src/extension",
   "contributes": {
