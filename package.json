@@ -1,8 +1,8 @@
 {
-  "name": "prettier-eslint-code",
-  "displayName": "prettier-eslint",
+  "name": "prettier-eslint-vscode",
+  "displayName": "Prettier - ESLint",
   "description": "Code extensions to format your JavaScript using Prettier and ESLint (with eslint --fix)",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "RobinMalfait",
   "engines": {
     "vscode": "^1.5.0"
