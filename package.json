@@ -4,6 +4,19 @@
   "description": "Code extensions to format your JavaScript using Prettier and ESLint (with eslint --fix)",
   "version": "0.1.0",
   "publisher": "RobinMalfait",
+  "galleryBanner": {
+    "color": "#ffe04b",
+    "theme": "light"
+  },
+  "homepage": "https://marketplace.visualstudio.com/items?itemName=RobinMalfait.prettier-eslint-vscode",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/RobinMalfait/prettier-eslint-code.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "http://github.com/RobinMalfait/prettier-eslint-code/issues"
+  },
   "engines": {
     "vscode": "^1.5.0"
   },
