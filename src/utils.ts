@@ -42,47 +42,29 @@ export function format(text: string = '', filePath: string) {
     }
 }
 
-export function formatDocument(validLanguages: any, document: TextDocument, editor: TextEditor, forceFullDocument: Boolean = false): Thenable<any> {
+export function formatDocument(validLanguages: any, document: TextDocument, editor: TextEditor): Thenable<any> {
     if (!validLanguages.includes(document.languageId)) {
         return Promise.reject('Language is not valid');
     }
 
-    const originalText = document.getText();
-
-    let selectionsToBeReplaced = [fullDocumentSelection(document)];
-    if (!forceFullDocument) {
-        const { selections } = editor;
+    const { selections } = editor;
         
-        selectionsToBeReplaced = selections.filter((selection) => {
-            return !(selection.start.line === selection.end.line
-                && selection.start.character === selection.end.character);
-        });
-        const hasSelections = selectionsToBeReplaced.length > 0;
+    const selectionsToBeReplaced = selections.filter((selection) => {
+        return !(selection.start.line === selection.end.line
+            && selection.start.character === selection.end.character);
+    });
+    const hasSelections = selectionsToBeReplaced.length > 0;
 
-        if (!hasSelections) {
-            selectionsToBeReplaced.push(fullDocumentSelection(document));
-        }    
+    if (!hasSelections) {
+        selectionsToBeReplaced.push(fullDocumentSelection(document));
     }
 
     return Promise.all(selectionsToBeReplaced.map((selection) => {
-        const selectedText = document.getText(selection);
-        const formattedText = format(selectedText, document.fileName);
-
-        // No changes
-        if (selectedText === formattedText) {
-            return;
-        }
-
         // Replace selection with new, formatted text
         return editor
             .edit((editBuilder) => editBuilder.replace(
                 selection,
-                formattedText
+                format(document.getText(selection), document.fileName)
             ));
-    }))
-    .then(() => {
-        const hasChanges = originalText !== document.getText();
-
-        return hasChanges;
-    });
+    }));
 }

@@ -15,11 +15,3 @@ export const registerPrettierESLintCommand = (validLanguages) => {
         );
     });
 }
-
-export const formatOnSave = (validLanguages, document: TextDocument) => {
-    const FORMAT_FULL_DOCUMENT = true;
-
-    window.showTextDocument(document)
-        .then((editor) => formatDocument(validLanguages, document, editor, FORMAT_FULL_DOCUMENT))
-        .then((hadChanges) => hadChanges && document.save());
-}
