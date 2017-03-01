@@ -20,8 +20,12 @@ ext install prettier-eslint-vscode
 
 ## Release Notes
 
+### 0.2.0
+
+- It formats the code when you save the file, only if you have `editor.formatOnSave` set to true in settings
+
 ### 0.1.0
 
-Initial release
+- Initial release
 
 [prettier-eslint]: https://github.com/kentcdodds/prettier-eslint
