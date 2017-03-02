@@ -7,8 +7,11 @@ import {
     window,
     workspace,
 } from 'vscode';
+import {
+    registerPrettierESLintCommand,
+    registerPrettierESLintCommandOutput
+} from './commands';
 import EditProvider from './PrettierESLintEditProvider';
-import { registerPrettierESLintCommand } from './commands';
 
 const VALID_LANG: DocumentSelector = ['javascript', 'javascriptreact'];
 
@@ -22,6 +25,7 @@ export function activate(context: ExtensionContext) {
 
         // Register all commands
         registerPrettierESLintCommand(VALID_LANG),
+        registerPrettierESLintCommandOutput(),
     ];
 
     context.subscriptions.push(...disposables);

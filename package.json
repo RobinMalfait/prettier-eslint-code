@@ -25,6 +25,7 @@
     ],
     "activationEvents": [
         "onCommand:prettier-eslint.format",
+        "prettier-eslint.open-output",
         "workspaceContains:.eslintrc",
         "workspaceContains:.eslintrc.js",
         "workspaceContains:.eslintrc.json",

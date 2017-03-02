@@ -3,21 +3,29 @@ import {
     Range,
     Selection,
     TextEditor,
+    StatusBarItem,
     window
 } from 'vscode';
 
 const formatPrettierESLint = require('prettier-eslint');
 
-let statusbar = undefined;
+let statusbar: StatusBarItem = undefined;
+let outputHandler: Function = () => {};
 
-function showStatusBarMessage(message, tooltip) {
+function showStatusBarMessage(message, output) {
     if (statusbar === undefined) {
         statusbar = window.createStatusBarItem();
     }
 
+    outputHandler(output);
+
     statusbar.text = message;
-    statusbar.tooltip = tooltip;
+    statusbar.command = 'prettier-eslint.open-output';
     statusbar.show();
+}
+
+export function registerOutputHandler (handler: Function = () => {}) {
+    outputHandler = handler;
 }
 
 export function fullDocumentRange(document: TextDocument): Range {

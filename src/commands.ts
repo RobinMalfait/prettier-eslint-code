@@ -4,7 +4,7 @@ import {
     window
 } from 'vscode';
 
-import { formatDocument } from './utils';
+import { formatDocument, registerOutputHandler } from './utils';
 
 export const registerPrettierESLintCommand = (validLanguages) => {
     return commands.registerCommand('prettier-eslint.format', () => {
@@ -15,3 +15,16 @@ export const registerPrettierESLintCommand = (validLanguages) => {
         );
     });
 }
+
+export const registerPrettierESLintCommandOutput = () => {
+    const outputChannel = window.createOutputChannel('Prettier ESLint');
+
+    registerOutputHandler((output) => {
+        outputChannel.clear();
+        outputChannel.append(output);
+    });
+
+    return commands.registerCommand('prettier-eslint.open-output', () => {
+        outputChannel.show();
+    });
+};
