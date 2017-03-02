@@ -48,7 +48,7 @@ export function formatDocument(validLanguages: any, document: TextDocument, edit
     }
 
     const { selections } = editor;
-        
+
     const selectionsToBeReplaced = selections.filter((selection) => {
         return !(selection.start.line === selection.end.line
             && selection.start.character === selection.end.character);
