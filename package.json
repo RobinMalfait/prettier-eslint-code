@@ -41,7 +41,18 @@
                 "command": "prettier-eslint.format",
                 "title": "Prettier ESLint: format"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Prettier - JavaScript formatter configuration",
+            "properties": {
+                "prettier.printWidth": {
+                    "type": "integer",
+                    "default": 80,
+                    "description": "Fit code within this line limit"
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",

@@ -4,7 +4,8 @@ import {
     Selection,
     TextEditor,
     StatusBarItem,
-    window
+    window,
+    workspace
 } from 'vscode';
 
 const formatPrettierESLint = require('prettier-eslint');
@@ -39,7 +40,9 @@ export function fullDocumentSelection(document: TextDocument): Selection {
 
 export function format(text: string = '', filePath: string) {
     try {
-        const formattedOutput = formatPrettierESLint({ text, filePath });
+        const prettierOptions = workspace.getConfiguration('prettier') as any;
+
+        const formattedOutput = formatPrettierESLint({ text, filePath, prettierOptions });
 
         showStatusBarMessage('Prettier ESLint: $(check)', 'All good!');
 
