@@ -4,10 +4,15 @@ Format your javascript via Prettier and ESLint --fix. This uses [`prettier-eslin
 
 ## Usage
 
-- You can manually run the command: ![](https://d.pr/i/AEhf.png)
-- You can use the build in formatter: ![](https://d.pr/i/fGjf.png)
+- You can manually run the command: ![](http://d.rbn.nu/i/AEhf.png)
+- You can use the build in formatter: ![](http://d.rbn.nu/i/fGjf.png)
 
 When you enable the `editor.formatOnSave` config, it works out of the box!
+
+## Settings
+
+- `prettier.printWidth` can be used to set a custom print width.
+- `prettier-eslint.eslintPath` can be used to set a custom eslint path.
 
 ### Installation
 

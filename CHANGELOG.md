@@ -3,6 +3,12 @@ All notable changes to the "prettier-eslint" extension will be documented in thi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.4.0]
+
+- You can add a `prettier.printWidth` option.
+- You can specify a custom `eslintPath` via `prettier-eslint.eslintPath`.
+- There is a default keybinding now `Cmd+Alt+P` which can be edited ofcourse.
+
 ## [0.3.0]
 
 - The status bar output is now clickable and it opens an output window with more information.
