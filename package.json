@@ -44,12 +44,17 @@
         ],
         "configuration": {
             "type": "object",
-            "title": "Prettier - JavaScript formatter configuration",
+            "title": "Prettier-eslint",
             "properties": {
                 "prettier.printWidth": {
                     "type": "integer",
                     "default": 80,
                     "description": "Fit code within this line limit"
+                },
+                "prettier-eslint.eslintPath": {
+                    "type": "string",
+                    "default": "",
+                    "description": "An optional path to eslint, otherwise it will try to guess the path."
                 }
             }
         }

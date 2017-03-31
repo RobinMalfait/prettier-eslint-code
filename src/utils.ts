@@ -11,7 +11,7 @@ import {
 const formatPrettierESLint = require('prettier-eslint');
 
 let statusbar: StatusBarItem = undefined;
-let outputHandler: Function = () => {};
+let outputHandler: Function = () => { };
 
 function showStatusBarMessage(message, output) {
     if (statusbar === undefined) {
@@ -25,7 +25,7 @@ function showStatusBarMessage(message, output) {
     statusbar.show();
 }
 
-export function registerOutputHandler (handler: Function = () => {}) {
+export function registerOutputHandler(handler: Function = () => { }) {
     outputHandler = handler;
 }
 
@@ -41,8 +41,16 @@ export function fullDocumentSelection(document: TextDocument): Selection {
 export function format(text: string = '', filePath: string) {
     try {
         const prettierOptions = workspace.getConfiguration('prettier') as any;
+        const prettierEslintOptions = workspace.getConfiguration('prettier-eslint') as any;
 
-        const formattedOutput = formatPrettierESLint({ text, filePath, prettierOptions });
+        const formattedOutput = formatPrettierESLint({
+            text,
+            filePath,
+            eslintPath: prettierEslintOptions.eslintPath.trim() === ""
+                ? undefined
+                : prettierEslintOptions.eslintPath,
+            prettierOptions
+        });
 
         showStatusBarMessage('Prettier ESLint: $(check)', 'All good!');
 
