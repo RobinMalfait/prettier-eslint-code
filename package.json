@@ -54,7 +54,13 @@
                     "description": "An optional path to eslint, otherwise it will try to guess the path."
                 }
             }
-        }
+        },
+        "keybindings":[
+            {
+                "command": "prettier-eslint.format",
+                "key": "Cmd+Alt+P"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
