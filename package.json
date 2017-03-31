@@ -2,7 +2,7 @@
     "name": "prettier-eslint-vscode",
     "displayName": "Prettier - ESLint",
     "description": "Code extensions to format your JavaScript using Prettier and ESLint (with eslint --fix)",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "publisher": "RobinMalfait",
     "icon": "prettier-logo.png",
     "homepage": "https://marketplace.visualstudio.com/items?itemName=RobinMalfait.prettier-eslint-vscode",
@@ -55,7 +55,7 @@
                 }
             }
         },
-        "keybindings":[
+        "keybindings": [
             {
                 "command": "prettier-eslint.format",
                 "key": "Cmd+Alt+P"
