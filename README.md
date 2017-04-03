@@ -34,4 +34,4 @@ ext install prettier-eslint-vscode
 
 Take a look at our [CHANGELOG](CHANGELOG.md)
 
-[prettier-eslint]: https://github.com/kentcdodds/prettier-eslint
+[prettier-eslint]: https://github.com/prettier/prettier-eslint
