@@ -52,6 +52,11 @@
                     "type": "string",
                     "default": "",
                     "description": "An optional path to eslint, otherwise it will try to guess the path."
+                },
+                "prettier-eslint.prettierPath": {
+                    "type": "string",
+                    "default": "",
+                    "description": "An optional path to prettier, otherwise it will try to guess the path."
                 }
             }
         },

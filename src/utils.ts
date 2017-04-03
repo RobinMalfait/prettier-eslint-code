@@ -38,6 +38,14 @@ export function fullDocumentSelection(document: TextDocument): Selection {
     return fullDocumentRange(document) as Selection;
 }
 
+const getPath = (path) => {
+    const trimmedPath = path.trim();
+
+    return trimmedPath === ""
+        ? undefined
+        : trimmedPath;
+}
+
 export function format(text: string = '', filePath: string) {
     try {
         const prettierOptions = workspace.getConfiguration('prettier') as any;
@@ -46,9 +54,8 @@ export function format(text: string = '', filePath: string) {
         const formattedOutput = formatPrettierESLint({
             text,
             filePath,
-            eslintPath: prettierEslintOptions.eslintPath.trim() === ""
-                ? undefined
-                : prettierEslintOptions.eslintPath,
+            eslintPath: getPath(prettierEslintOptions.eslintPath),
+            prettierPath: getPath(prettierEslintOptions.prettierPath),
             prettierOptions
         });
 
