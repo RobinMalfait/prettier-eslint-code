@@ -4,8 +4,8 @@ Format your javascript via Prettier and ESLint --fix. This uses [`prettier-eslin
 
 ## Usage
 
-- You can manually run the command: ![](http://d.rbn.nu/i/AEhf.png)
-- You can use the build in formatter: ![](http://d.rbn.nu/i/fGjf.png)
+- You can manually run the command: ![](./screenshots/command.png)
+- You can use the build in formatter: ![](./format.png)
 
 When you enable the `editor.formatOnSave` config, it works out of the box!
 
