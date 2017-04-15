@@ -3,6 +3,10 @@ All notable changes to the "prettier-eslint" extension will be documented in thi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.6.0]
+
+- Update to latest [prettier-eslint](https://github.com/prettier/prettier-eslint) version 5.1.0.
+
 ## [0.5.0]
 
 - You can specify a custom `prettierPath` via `prettier-eslint.prettierPath`.
