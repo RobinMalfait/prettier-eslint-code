@@ -43,10 +43,52 @@
             "type": "object",
             "title": "Prettier-eslint",
             "properties": {
+                "prettier.useTabs": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Indent lines with tabs"
+                },
                 "prettier.printWidth": {
                     "type": "integer",
                     "default": 80,
                     "description": "Fit code within this line limit"
+                },
+                "prettier.tabWidth": {
+                    "type": "integer",
+                    "default": 2,
+                    "description": "Number of spaces it should use per tab"
+                },
+                "prettier.singleQuote": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true, will use single instead of double quotes"
+                },
+                "prettier.trailingComma": {
+                    "type": "string",
+                    "default": "none",
+                    "enum": ["none", "es5", "all"],
+                    "description": "Controls the printing of trailing commas wherever possible. Valid options:\n\"none\" - No trailing commas\n\"es5\"  - Trailing commas where valid in ES5 (objects, arrays, etc)\n\"all\"  - Trailing commas wherever possible (function arguments)"
+                },
+                "prettier.bracketSpacing": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Controls the printing of spaces inside object literals"
+                },
+                "prettier.jsxBracketSameLine": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true, puts the `>` of a multi-line jsx element at the end of\nthe last line instead of being alone on the next line"
+                },
+                "prettier.parser": {
+                    "type": "string",
+                    "default": "babylon",
+                    "enum": ["babylon", "flow"],
+                    "description": "Which parser to use. Valid options are 'flow' and 'babylon'"
+                },
+                "prettier.semi": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Whether to add a semicolon at the end of every line (semi: true),\nor only at the beginning of lines that may introduce ASI failures (semi: false)"
                 },
                 "prettier-eslint.eslintPath": {
                     "type": "string",
