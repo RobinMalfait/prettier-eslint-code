@@ -16,10 +16,6 @@ When you enable the `editor.formatOnSave` config, it works out of the box!
 
 ## Prettier - Settings
 
-<details>
-
-<summary>Show all prettier options</summary>
-
 ```js
 {
   // Indent lines with tabs
@@ -55,8 +51,6 @@ When you enable the `editor.formatOnSave` config, it works out of the box!
   "prettier.semi": true,
 }
 ```
-
-</details>
 
 ### Installation
 
