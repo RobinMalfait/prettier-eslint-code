@@ -2,7 +2,7 @@
     "name": "prettier-eslint-vscode",
     "displayName": "Prettier - ESLint",
     "description": "Code extensions to format your JavaScript using Prettier and ESLint (with eslint --fix)",
-    "version": "0.6.1",
+    "version": "0.7.0",
     "publisher": "RobinMalfait",
     "icon": "prettier-logo.png",
     "homepage": "https://marketplace.visualstudio.com/items?itemName=RobinMalfait.prettier-eslint-vscode",
@@ -66,7 +66,11 @@
                 "prettier.trailingComma": {
                     "type": "string",
                     "default": "none",
-                    "enum": ["none", "es5", "all"],
+                    "enum": [
+                        "none",
+                        "es5",
+                        "all"
+                    ],
                     "description": "Controls the printing of trailing commas wherever possible. Valid options:\n\"none\" - No trailing commas\n\"es5\"  - Trailing commas where valid in ES5 (objects, arrays, etc)\n\"all\"  - Trailing commas wherever possible (function arguments)"
                 },
                 "prettier.bracketSpacing": {
@@ -82,7 +86,10 @@
                 "prettier.parser": {
                     "type": "string",
                     "default": "babylon",
-                    "enum": ["babylon", "flow"],
+                    "enum": [
+                        "babylon",
+                        "flow"
+                    ],
                     "description": "Which parser to use. Valid options are 'flow' and 'babylon'"
                 },
                 "prettier.semi": {
