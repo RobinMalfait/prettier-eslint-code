@@ -130,6 +130,7 @@
         "vscode": "^1.1.0"
     },
     "dependencies": {
-        "prettier-eslint": "^5.1.0"
+        "prettier-eslint": "^5.1.0",
+        "require-relative": "^0.8.7"
     }
 }
