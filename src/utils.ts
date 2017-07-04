@@ -8,7 +8,7 @@ import {
     workspace
 } from 'vscode';
 
-const formatPrettierESLint = require('prettier-eslint');
+const requireRelative = require('require-relative');
 
 let statusbar: StatusBarItem = undefined;
 let outputHandler: Function = () => { };
@@ -48,6 +48,7 @@ const getPath = (path) => {
 
 export function format(text: string = '', filePath: string) {
     try {
+        const formatPrettierESLint = requirePrettierEslint(filePath);
         const prettierOptions = workspace.getConfiguration('prettier') as any;
         const prettierEslintOptions = workspace.getConfiguration('prettier-eslint') as any;
 
@@ -93,4 +94,12 @@ export function formatDocument(validLanguages: any, document: TextDocument, edit
                 format(document.getText(selection), document.fileName)
             ));
     }));
+}
+
+function requirePrettierEslint(filePath: string) {
+    try {
+        return requireRelative('prettier-eslint', filePath);
+    } catch (err) {
+        return require('prettier-eslint');
+    }
 }
