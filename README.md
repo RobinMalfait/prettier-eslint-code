@@ -1,3 +1,8 @@
+# DEPRECATED
+
+Please use the following package: [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (`ext install prettier-vscode`).
+This package is deprecated and won't be maintained anymore.
+
 # Prettier-ESLint for Visual Studio Code
 
 Format your javascript via Prettier and ESLint --fix. This uses [`prettier-eslint`][prettier-eslint] to automatically format and fix on save.
